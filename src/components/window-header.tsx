@@ -1,6 +1,7 @@
 import React from 'react';
 import { Badge, Flex, Heading } from '@chakra-ui/react';
 import { Environments, getEnvironment, getVersion } from '../util/config';
+
 export default function WindowHeader() {
     const environment = getEnvironment();
     const getBadgeColour = (env: Environments) => {
