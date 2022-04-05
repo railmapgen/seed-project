@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import AppRoot from './components/app-root';
 import chakraTheme from './theme/theme';
 import store from './redux';
+import './i18n/config';
 
 const renderApp = () => {
     ReactDOM.render(
