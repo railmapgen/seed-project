@@ -17,7 +17,7 @@ UAT_REPO_NAME=rmg-repositories
 npm config set tag-version-prefix "${APP_NAME}-"
 
 ### BUMP VERSION
-if [ "$BRANCH" = "master" ]
+if [ "$BRANCH" = "main" ]
 then
   # build with a normal version
   npm version patch -m "${APP_NAME}-%s release" --force || { echo "Release Error"; exit 1; }
@@ -38,7 +38,7 @@ CI='' npm run build
 cp -r build/ $UAT_REPO_NAME/"$APP_NAME"/"$RMG_VER"/
 
 ### PUSH TAG AND COMMIT
-if [ "$BRANCH" = "master" ]
+if [ "$BRANCH" = "main" ]
 then
   git push --atomic origin HEAD "${APP_NAME}-${RMG_VER}"
 fi
