@@ -1,3 +1,5 @@
 {
-  "version": "0.1.2"
+  "component": "seed-project",
+  "version": "0.1.4",
+  "environment": "PRD"
 }
