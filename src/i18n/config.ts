@@ -33,7 +33,7 @@ i18n.use(LanguageDetector)
         resources,
     })
     .then(t => {
-        document.title = t('WindowHeader.heading');
+        document.title = t('Seed Project');
         document.documentElement.lang = i18n.language;
     });
 
