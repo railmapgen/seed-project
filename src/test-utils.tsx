@@ -1,19 +1,19 @@
 import '@testing-library/jest-dom';
 import React, { ReactElement, ReactNode } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
-import { Store } from 'redux';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n/config';
 import { Provider } from 'react-redux';
 import rootReducer from './redux';
-import { createMockAppStore } from './setupTests';
+import { createMockRootStore } from './setupTests';
+import { Store } from '@reduxjs/toolkit';
 
 interface CustomRenderOptions extends Omit<RenderOptions, 'wrapper'> {
     store: Store;
 }
 
 const initialOptions: CustomRenderOptions = {
-    store: createMockAppStore({ ...rootReducer.getState() }),
+    store: createMockRootStore({ ...rootReducer.getState() }),
 };
 
 interface TestingProviderProps {
