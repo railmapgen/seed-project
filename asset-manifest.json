@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/seed-project/static/js/main.281cbb6c.js",
+    "main.css": "/seed-project/static/css/main.186d89f0.css",
+    "main.js": "/seed-project/static/js/main.3181abdc.js",
     "index.html": "/seed-project/index.html",
-    "main.281cbb6c.js.map": "/seed-project/static/js/main.281cbb6c.js.map"
+    "main.186d89f0.css.map": "/seed-project/static/css/main.186d89f0.css.map",
+    "main.3181abdc.js.map": "/seed-project/static/js/main.3181abdc.js.map"
   },
   "entrypoints": [
-    "static/js/main.281cbb6c.js"
+    "static/css/main.186d89f0.css",
+    "static/js/main.3181abdc.js"
   ]
 }
