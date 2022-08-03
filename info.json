@@ -1,5 +1,6 @@
 {
   "component": "seed-project",
-  "version": "0.2.3",
-  "environment": "PRD"
+  "version": "0.2.4",
+  "environment: "PRD",
+  "instance": "GitHub"
 }
