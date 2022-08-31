@@ -1,10 +1,10 @@
+import rmgRuntime from '@railmapgen/rmg-runtime';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { LanguageCode, Translation } from '../constants/constants';
 import enTranslation from './translations/en.json';
 import zhHansTranslation from './translations/zh-Hans.json';
 import zhHantTranslation from './translations/zh-Hant.json';
-import LanguageDetector from 'i18next-browser-languagedetector';
 
 const resources = {
     [LanguageCode.English]: {
@@ -18,9 +18,9 @@ const resources = {
     },
 };
 
-i18n.use(LanguageDetector)
-    .use(initReactI18next)
+i18n.use(initReactI18next)
     .init({
+        lng: rmgRuntime.getLanguage(),
         fallbackLng: {
             [LanguageCode.ChineseCN]: [LanguageCode.ChineseSimp, LanguageCode.English],
             [LanguageCode.ChineseHK]: [LanguageCode.ChineseTrad, LanguageCode.English],
