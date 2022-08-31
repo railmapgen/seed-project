@@ -1,3 +1,4 @@
+import rmgRuntime from '@railmapgen/rmg-runtime';
 import { Button } from '@chakra-ui/react';
 import React from 'react';
 import WindowHeader from './window-header';
@@ -22,9 +23,13 @@ export default function AppRoot() {
                 <br />
                 Please replace any "RMG Seed Project" or "seed-project" with the correct component name.
                 <br />
-                Chakra UI and Redux store are setup already. Here's an example state: {counter}.
+                Chakra UI and Redux store have been setup already. Here's an example state: {counter}.
                 <br />
                 <Button onClick={() => dispatch(bumpCounter())}>Bump</Button>
+                <br />
+                RMG Runtime has been setup. Click the button below to open RMG in another tab.
+                <br />
+                <Button onClick={() => rmgRuntime.openApp('rmg')}>Open RMG</Button>
             </RmgPage>
         </RmgWindow>
     );
