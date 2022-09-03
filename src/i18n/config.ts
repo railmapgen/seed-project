@@ -2,19 +2,12 @@ import rmgRuntime from '@railmapgen/rmg-runtime';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { LanguageCode, Translation } from '../constants/constants';
-import enTranslation from './translations/en.json';
-import zhHansTranslation from './translations/zh-Hans.json';
-import zhHantTranslation from './translations/zh-Hant.json';
+import rmgTranslate from '@railmapgen/rmg-translate';
 
 const resources = {
+    ...rmgTranslate.resources,
     [LanguageCode.English]: {
-        translation: enTranslation,
-    },
-    [LanguageCode.ChineseSimp]: {
-        translation: zhHansTranslation,
-    },
-    [LanguageCode.ChineseTrad]: {
-        translation: zhHantTranslation,
+        translation: {},
     },
 };
 

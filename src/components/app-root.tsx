@@ -5,8 +5,10 @@ import WindowHeader from './window-header';
 import { useRootDispatch, useRootSelector } from '../redux';
 import { bumpCounter } from '../redux/app/app-slice';
 import { RmgDebouncedInput, RmgLabel, RmgPage, RmgPageHeader, RmgWindow } from '@railmapgen/rmg-components';
+import { useTranslation } from 'react-i18next';
 
 export default function AppRoot() {
+    const { t } = useTranslation();
     const dispatch = useRootDispatch();
     const counter = useRootSelector(state => state.app.counter);
 
@@ -29,7 +31,7 @@ export default function AppRoot() {
                 <br />
                 RMG Runtime has been setup. Click the button below to open RMG in another tab.
                 <br />
-                <Button onClick={() => rmgRuntime.openApp('rmg')}>Open RMG</Button>
+                <Button onClick={() => rmgRuntime.openApp('rmg')}>Open {t('Rail Map Generator')}</Button>
             </RmgPage>
         </RmgWindow>
     );
