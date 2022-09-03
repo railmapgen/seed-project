@@ -26,5 +26,6 @@ const renderApp = () => {
     );
 };
 
-rmgRuntime.onLanguageChange(language => i18n.changeLanguage(language));
 renderApp();
+rmgRuntime.onLanguageChange(language => i18n.changeLanguage(language));
+rmgRuntime.injectCss();
