@@ -1,15 +1,16 @@
 import rmgRuntime from '@railmapgen/rmg-runtime';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { LanguageCode, Translation } from '../constants/constants';
-import rmgTranslate from '@railmapgen/rmg-translate';
+import RmgTranslate, { LanguageCode, Translation } from '@railmapgen/rmg-translate';
+import enTranslation from './translations/en.json';
+import zhHansTranslation from './translations/zh-Hans.json';
+import zhHantTranslation from './translations/zh-Hant.json';
 
-const resources = {
-    ...rmgTranslate.resources,
-    [LanguageCode.English]: {
-        translation: {},
-    },
-};
+const resources = new RmgTranslate.Builder()
+    .withResource('en', enTranslation)
+    .withResource('zh-Hans', zhHansTranslation)
+    .withResource('zh-Hant', zhHantTranslation)
+    .build();
 
 i18n.use(initReactI18next)
     .init({
@@ -25,12 +26,17 @@ i18n.use(initReactI18next)
         },
         resources,
     })
-    .then(t => {
-        document.title = t('Seed Project');
+    .then(() => {
         document.documentElement.lang = i18n.language;
     });
 
 export default i18n;
+
+export const handleLanguageChange = (language: string) => {
+    i18n.changeLanguage(language).then();
+    document.documentElement.lang = language;
+};
+rmgRuntime.onLanguageChange(handleLanguageChange);
 
 export const translateText = (translation: Translation): string => {
     return (
