@@ -8,6 +8,7 @@ import i18n from './i18n/config';
 import { createRoot, Root } from 'react-dom/client';
 import { rmgChakraTheme } from '@railmapgen/rmg-components';
 import { I18nextProvider } from 'react-i18next';
+import initStore from './redux/init';
 
 let root: Root;
 
@@ -26,5 +27,8 @@ const renderApp = () => {
     );
 };
 
-renderApp();
-rmgRuntime.injectCss();
+rmgRuntime.ready().then(() => {
+    initStore(store);
+    renderApp();
+    rmgRuntime.injectCss();
+});

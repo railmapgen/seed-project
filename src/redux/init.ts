@@ -1,5 +1,5 @@
-import { Store } from '@reduxjs/toolkit';
+import { RootStore } from './index';
 
-export default function initStore(store: Store) {
+export default function initStore(store: RootStore) {
     // startRootListening
 }

@@ -11,6 +11,7 @@ const store = configureStore({
     },
     middleware: getDefaultMiddleware => getDefaultMiddleware().prepend(listenerMiddleware.middleware),
 });
+export type RootStore = typeof store;
 export type RootState = ReturnType<typeof store.getState>;
 
 export type RootDispatch = typeof store.dispatch;
@@ -20,6 +21,5 @@ export const useRootSelector: TypedUseSelectorHook<RootState> = useSelector;
 type RootStartListening = TypedStartListening<RootState, RootDispatch>;
 export const startRootListening = listenerMiddleware.startListening as RootStartListening;
 
-initStore(store);
 (window as any).rmgStore = store;
 export default store;
