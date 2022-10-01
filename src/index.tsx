@@ -9,6 +9,7 @@ import { createRoot, Root } from 'react-dom/client';
 import { rmgChakraTheme } from '@railmapgen/rmg-components';
 import { I18nextProvider } from 'react-i18next';
 import initStore from './redux/init';
+import { Events } from './util/constant';
 
 let root: Root;
 
@@ -31,5 +32,5 @@ rmgRuntime.ready().then(() => {
     initStore(store);
     renderApp();
     rmgRuntime.injectCss();
-    rmgRuntime.event('APP_LOAD', {});
+    rmgRuntime.event(Events.APP_LOAD, {});
 });
