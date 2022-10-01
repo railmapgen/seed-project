@@ -31,4 +31,5 @@ rmgRuntime.ready().then(() => {
     initStore(store);
     renderApp();
     rmgRuntime.injectCss();
+    rmgRuntime.event('APP_LOAD', {});
 });

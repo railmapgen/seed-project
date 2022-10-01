@@ -1,7 +1,6 @@
 import { configureStore, createListenerMiddleware, TypedStartListening } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import appReducer from './app/app-slice';
-import initStore from './init';
 
 const listenerMiddleware = createListenerMiddleware();
 
