@@ -35,8 +35,8 @@ fi
 ### BUILD
 mkdir -p $UAT_REPO_NAME/"$APP_NAME"/
 
-CI='' npm run dist
-cp -r build/ $UAT_REPO_NAME/"$APP_NAME"/"$RMG_VER"/
+CI='' npm run build
+cp -r dist/ $UAT_REPO_NAME/"$APP_NAME"/"$RMG_VER"/
 
 ### PUSH TAG AND COMMIT
 if [ "$BRANCH" = "main" ]
