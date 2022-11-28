@@ -31,7 +31,9 @@ export default function AppRoot() {
                 <br />
                 RMG Runtime has been setup. Click the button below to open RMG in another tab.
                 <br />
-                <Button onClick={() => rmgRuntime.openApp('rmg')}>Open {t('Rail Map Generator')}</Button>
+                <Button onClick={() => rmgRuntime.openApp('rmg')}>
+                    {t('Open')} {t('Rail Map Generator')}
+                </Button>
             </RmgPage>
         </RmgWindow>
     );
