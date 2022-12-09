@@ -1,6 +1,6 @@
 import rmgRuntime from '@railmapgen/rmg-runtime';
 import { ChakraProvider } from '@chakra-ui/react';
-import React, { StrictMode } from 'react';
+import { StrictMode } from 'react';
 import { Provider } from 'react-redux';
 import AppRoot from './components/app-root';
 import store from './redux';

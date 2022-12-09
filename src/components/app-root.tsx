@@ -1,6 +1,5 @@
 import rmgRuntime from '@railmapgen/rmg-runtime';
 import { Button } from '@chakra-ui/react';
-import React from 'react';
 import WindowHeader from './window-header';
 import { useRootDispatch, useRootSelector } from '../redux';
 import { bumpCounter } from '../redux/app/app-slice';

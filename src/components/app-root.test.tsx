@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '../test-utils';
 import AppRoot from './app-root';
 import { screen } from '@testing-library/react';
