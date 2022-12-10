@@ -33,12 +33,15 @@
         "@types/redux-mock-store": "^1.0.3",
         "@typescript-eslint/eslint-plugin": "^5.46.0",
         "@typescript-eslint/parser": "^5.46.0",
+        "@vitejs/plugin-legacy": "^2.3.1",
         "@vitejs/plugin-react": "^2.2.0",
         "eslint": "^8.28.0",
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-react": "^7.31.11",
+        "jsdom": "^20.0.3",
         "prettier": "^2.8.0",
         "redux-mock-store": "^1.5.4",
+        "terser": "^5.16.1",
         "typescript": "^4.9.3",
         "vite": "^3.2.4",
         "vite-plugin-checker": "^0.5.1",
@@ -51,18 +54,6 @@
         "lint": "eslint ./src",
         "lint:fix": "eslint ./src --fix",
         "preview": "vite preview"
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
     },
     "version": "1.0.3"
 }
