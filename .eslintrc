@@ -38,5 +38,15 @@
     },
     "ignorePatterns": [
         "**/*.json"
+    ],
+    "overrides": [
+        {
+            "files": [
+                "**/*.test.*"
+            ],
+            "rules": {
+                "@typescript-eslint/no-empty-function": "off"
+            }
+        }
     ]
 }
