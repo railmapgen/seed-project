@@ -14,20 +14,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout project
+        uses: actions/checkout@v3
+        with:
+          path: main
+
       - uses: actions/setup-node@v2
         with:
           node-version: '18'
+          path: main
       - run: npm ci
 
-      - name: Clone UAT repo
-        run: git clone --depth 1 https://wongchito:${{ secrets.RMG_BUILD_AND_RELEASE }}@github.com/uat-railmapgen/rmg-repositories.git
-
       - name: Build
+        id: build
         run: |
           chmod +x ./scripts/build.sh
           ./scripts/build.sh
-        id: build
+        with:
+          path: main
+
+      - name: Checkout artefacts repo
+        uses: actions/checkout@v3
+        with:
+          repository: uat-railmapgen/rmg-repositories
+          path: repo
+
+      - name: Upload artefacts
+        run: |
+          chmod +x ./scripts/upload.sh
+          ./scripts/upload.sh
+        with:
+          path: repo
+        env:
+          APP_NAME: seed-project
+          RMG_VER: ${{ steps.build.outputs.RMG_VER }}
 
       - name: Auto deploy
         if: ${{ github.event.inputs.auto_deploy == 'UAT' || github.event.inputs.auto_deploy == 'PRD' }}
