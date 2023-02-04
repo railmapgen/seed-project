@@ -33,21 +33,13 @@ jobs:
           chmod +x ./scripts/build.sh
           ./scripts/build.sh
 
-      - name: Checkout artefacts repo
-        uses: actions/checkout@v3
-        with:
-          repository: uat-railmapgen/rmg-repositories
-          path: repo
-          token: ${{ secrets.RMG_BUILD_AND_RELEASE }}
-
       - name: Upload artefacts
-        working-directory: repo
-        run: |
-          chmod +x ../main/scripts/upload.sh
-          ../main/scripts/upload.sh
-        env:
-          APP_NAME: seed-project
-          RMG_VER: ${{ steps.build.outputs.RMG_VER }}
+        uses: railmapgen/upload-artefacts@main
+        with:
+          app_name: seed-project
+          version: ${{ steps.build.outputs.RMG_VER }}
+          dist: dist
+          token: ${{ secrets.RMG_BUILD_AND_RELEASE }}
 
       - name: Auto deploy
         if: ${{ github.event.inputs.auto_deploy == 'UAT' || github.event.inputs.auto_deploy == 'PRD' }}
