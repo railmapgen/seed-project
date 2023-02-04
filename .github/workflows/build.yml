@@ -42,8 +42,8 @@ jobs:
       - name: Upload artefacts
         working-directory: repo
         run: |
-          chmod +x ./scripts/upload.sh
-          ./scripts/upload.sh
+          chmod +x ../main/scripts/upload.sh
+          ../main/scripts/upload.sh
         env:
           APP_NAME: seed-project
           RMG_VER: ${{ steps.build.outputs.RMG_VER }}
