@@ -38,6 +38,7 @@ jobs:
         with:
           repository: uat-railmapgen/rmg-repositories
           path: repo
+          token: ${{ secrets.RMG_BUILD_AND_RELEASE }}
 
       - name: Upload artefacts
         working-directory: repo
