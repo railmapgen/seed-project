@@ -27,11 +27,10 @@ jobs:
 
       - name: Build
         id: build
+        working-directory: main
         run: |
           chmod +x ./scripts/build.sh
           ./scripts/build.sh
-        with:
-          path: main
 
       - name: Checkout artefacts repo
         uses: actions/checkout@v3
@@ -40,11 +39,10 @@ jobs:
           path: repo
 
       - name: Upload artefacts
+        working-directory: repo
         run: |
           chmod +x ./scripts/upload.sh
           ./scripts/upload.sh
-        with:
-          path: repo
         env:
           APP_NAME: seed-project
           RMG_VER: ${{ steps.build.outputs.RMG_VER }}
