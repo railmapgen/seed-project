@@ -1,8 +1,7 @@
 import { Heading, HStack, IconButton, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { RmgEnvBadge, RmgWindowHeader } from '@railmapgen/rmg-components';
-import { LanguageCode } from '@railmapgen/rmg-translate';
-import { handleLanguageChange } from '../i18n/config';
+import { LANGUAGE_NAMES, LanguageCode, SUPPORTED_LANGUAGES } from '@railmapgen/rmg-translate';
 import rmgRuntime from '@railmapgen/rmg-runtime';
 import { MdTranslate } from 'react-icons/md';
 
@@ -14,7 +13,7 @@ export default function WindowHeader() {
 
     const handleSelectLanguage = (language: LanguageCode) => {
         rmgRuntime.setLanguage(language);
-        handleLanguageChange(language);
+        rmgRuntime.getI18nInstance().changeLanguage(language);
     };
 
     return (
@@ -28,10 +27,11 @@ export default function WindowHeader() {
                 <Menu>
                     <MenuButton as={IconButton} icon={<MdTranslate />} variant="ghost" size="sm" />
                     <MenuList>
-                        <MenuItem onClick={() => handleSelectLanguage(LanguageCode.English)}>English</MenuItem>
-                        <MenuItem onClick={() => handleSelectLanguage(LanguageCode.ChineseSimp)}>简体中文</MenuItem>
-                        <MenuItem onClick={() => handleSelectLanguage(LanguageCode.ChineseTrad)}>繁體中文</MenuItem>
-                        <MenuItem onClick={() => handleSelectLanguage(LanguageCode.Korean)}>한국어</MenuItem>
+                        {SUPPORTED_LANGUAGES.map(lang => (
+                            <MenuItem key={lang} onClick={() => handleSelectLanguage(lang)}>
+                                {LANGUAGE_NAMES[lang][lang]}
+                            </MenuItem>
+                        ))}
                     </MenuList>
                 </Menu>
             </HStack>
