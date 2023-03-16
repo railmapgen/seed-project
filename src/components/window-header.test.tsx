@@ -1,10 +1,10 @@
 import { render } from '../test-utils';
-import AppRoot from './app-root';
 import { screen } from '@testing-library/react';
+import WindowHeader from './window-header';
 
-describe('AppRoot', () => {
+describe('WindowHeader', () => {
     it('Can render window header', () => {
-        render(<AppRoot />);
+        render(<WindowHeader />);
 
         expect(screen.getByRole('heading').textContent).toContain('Seed Project');
     });
