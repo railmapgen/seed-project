@@ -1,7 +1,7 @@
 import { Heading, HStack, IconButton, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
 import { RmgEnvBadge, RmgWindowHeader } from '@railmapgen/rmg-components';
-import { LANGUAGE_NAMES, LanguageCode, SUPPORTED_LANGUAGES } from '@railmapgen/rmg-translate';
+import { LANGUAGE_NAMES, SUPPORTED_LANGUAGES, SupportedLanguageCode } from '@railmapgen/rmg-translate';
 import rmgRuntime from '@railmapgen/rmg-runtime';
 import { MdTranslate } from 'react-icons/md';
 
@@ -11,7 +11,7 @@ export default function WindowHeader() {
     const environment = rmgRuntime.getEnv();
     const appVersion = rmgRuntime.getAppVersion();
 
-    const handleSelectLanguage = (language: LanguageCode) => {
+    const handleSelectLanguage = (language: SupportedLanguageCode) => {
         rmgRuntime.setLanguage(language);
         rmgRuntime.getI18nInstance().changeLanguage(language);
     };
