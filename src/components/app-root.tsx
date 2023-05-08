@@ -30,8 +30,8 @@ export default function AppRoot() {
                     </RmgPageHeader>
                     This is a seed project for RMG with React framework.
                     <br />
-                    Please replace any &quot;RMG Seed Project&quot; or &quot;seed-project&quot; with the correct
-                    component name.
+                    Please replace any &quot;Seed Project&quot; or &quot;seed-project&quot; with the correct component
+                    name.
                     <br />
                     Chakra UI and Redux store have been setup already. Here&apos;s an example state: {counter}.
                     <br />
