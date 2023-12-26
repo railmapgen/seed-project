@@ -49,4 +49,5 @@ jobs:
           version: ${{ steps.build.outputs.RMG_VER }}
           environment: ${{ inputs.auto_deploy }}
           dist: dist
-          token: ${{ secrets.RMG_BUILD_AND_RELEASE }}
+          github_token: ${{ secrets.RMG_BUILD_AND_RELEASE }}
+          gitlab_token: ${{ secrets.GITLAB_RELEASE }}
