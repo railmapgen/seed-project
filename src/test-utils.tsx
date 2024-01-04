@@ -4,8 +4,10 @@ import { render, RenderOptions } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n/config';
 import { Provider } from 'react-redux';
-import { createTestStore } from './setupTests';
 import { Store } from '@reduxjs/toolkit';
+import { createStore } from './redux';
+
+export const createTestStore = createStore;
 
 interface CustomRenderOptions extends Omit<RenderOptions, 'wrapper'> {
     store: Store;

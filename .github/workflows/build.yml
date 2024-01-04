@@ -39,7 +39,7 @@ jobs:
         run: ./scripts/build.sh
         shell: bash
         env:
-          BUMP_VERSION: ${{ github.event.inputs.bump_version }}
+          BUMP_VERSION: ${{ inputs.bump_version }}
 
       - name: Release
         if: ${{ inputs.auto_deploy == 'UAT' || inputs.auto_deploy == 'PRD' }}
