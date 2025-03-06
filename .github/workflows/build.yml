@@ -45,7 +45,7 @@ jobs:
         if: ${{ inputs.auto_deploy == 'UAT' || inputs.auto_deploy == 'PRD' }}
         uses: railmapgen/releaser@main
         with:
-          app_name: __APP_NAME__
+          app_name: ${{ steps.build.outputs.APP_NAME }}
           version: ${{ steps.build.outputs.RMG_VER }}
           environment: ${{ inputs.auto_deploy }}
           dist: dist
