@@ -1,5 +1,7 @@
-import { TextEncoder } from 'util';
+import { setupTest } from '@railmapgen/mantine-components/utils';
+import crypto from 'node:crypto';
 
+setupTest();
 const originalFetch = global.fetch;
 global.fetch = vi.fn().mockImplementation((...args: any[]) => {
     if (args[0].toString().includes('/info.json')) {
@@ -13,4 +15,4 @@ global.fetch = vi.fn().mockImplementation((...args: any[]) => {
     }
 });
 
-global.TextEncoder = TextEncoder;
+vi.stubGlobal('crypto', crypto);

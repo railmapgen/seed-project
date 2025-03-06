@@ -1,8 +1,8 @@
-import { Heading, HStack, IconButton } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
-import { RmgEnvBadge, RmgWindowHeader } from '@railmapgen/rmg-components';
 import rmgRuntime from '@railmapgen/rmg-runtime';
-import { MdHelp } from 'react-icons/md';
+import { MdOutlineHelpOutline } from 'react-icons/md';
+import { RMEnvBadge, RMWindowHeader } from '@railmapgen/mantine-components';
+import { ActionIcon, Title } from '@mantine/core';
 
 export default function WindowHeader() {
     const { t } = useTranslation();
@@ -11,15 +11,13 @@ export default function WindowHeader() {
     const appVersion = rmgRuntime.getAppVersion();
 
     return (
-        <RmgWindowHeader>
-            <Heading as="h4" size="md">
-                {t('__APP_DISPLAY_NAME__')}
-            </Heading>
-            <RmgEnvBadge environment={environment} version={appVersion} />
+        <RMWindowHeader>
+            <Title>{t('__APP_DISPLAY_NAME__')}</Title>
+            <RMEnvBadge env={environment} ver={appVersion} />
 
-            <HStack ml="auto">
-                <IconButton size="sm" variant="ghost" aria-label={t('Help')} title={t('Help')} icon={<MdHelp />} />
-            </HStack>
-        </RmgWindowHeader>
+            <ActionIcon variant="subtle" color="gray" size="sm" aria-label={t('Help')} title={t('Help')} ml="auto">
+                <MdOutlineHelpOutline />
+            </ActionIcon>
+        </RMWindowHeader>
     );
 }
