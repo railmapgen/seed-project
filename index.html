@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-      <script type="module" crossorigin src="/seed-project/assets/polyfills-CZnTsuCs.js"></script>
-
         <meta charset="utf-8" />
-        <link rel="icon" href="/seed-project/favicon.ico" />
+        <link rel="icon" href="/__APP_NAME__/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="robots" content="noindex" />
-        <meta name="description" content="Rail Map Toolkit - Seed Project" />
+        <meta name="description" content="Rail Map Toolkit - __APP_DISPLAY_NAME__" />
         <base href="./" />
-        <link rel="apple-touch-icon" href="/seed-project/logo192.png" />
-        <link rel="manifest" href="/seed-project/manifest.json" />
+        <link rel="apple-touch-icon" href="/__APP_NAME__/logo192.png" />
+        <link rel="manifest" href="/__APP_NAME__/manifest.json" />
         <style>
             @keyframes animation-spinner {
                 0% {transform: rotate(0deg)}
                 100% {transform: rotate(360deg)}
             }
             .spinner {
-                border-top: 2px solid currentcolor;
-                border-right: 2px solid currentcolor;
-                border-bottom: 2px solid transparent;
-                border-left: 2px solid transparent;
+                border-top: calc(0.125rem * var(--mantine-scale)) solid currentcolor;
+                border-right: calc(0.125rem * var(--mantine-scale)) solid currentcolor;
+                border-bottom: calc(0.125rem * var(--mantine-scale)) solid transparent;
+                border-left: calc(0.125rem * var(--mantine-scale)) solid transparent;
                 border-radius: 100%;
-                width: 28px;
-                height: 28px;
+                width: calc(1.75rem * var(--mantine-scale));
+                height: calc(1.75rem * var(--mantine-scale));
                 animation: 0.45s linear 0s infinite animation-spinner;
                 position: absolute;
                 top: calc(50% - 16px);
@@ -33,12 +31,11 @@
             }
         </style>
 
-        <title>Seed Project</title>
-      <script type="module" crossorigin src="/seed-project/assets/index-BHGZV1NJ.js"></script>
-      <link rel="modulepreload" crossorigin href="/seed-project/assets/react-2R-yWo73.js">
-      <link rel="modulepreload" crossorigin href="/seed-project/assets/chakra-B-rhFKYx.js">
-      <script type="module">import.meta.url;import("_").catch(()=>1);(async function*(){})().next();if(location.protocol!="file:"){window.__vite_is_modern_browser=true}</script>
-      <script type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
+        <title>__APP_DISPLAY_NAME__</title>
+      <script type="module" crossorigin src="/__APP_NAME__/assets/index-B4VITN4_.js"></script>
+      <link rel="modulepreload" crossorigin href="/__APP_NAME__/assets/react-H-L8nSWA.js">
+      <link rel="modulepreload" crossorigin href="/__APP_NAME__/assets/mantine-P2m6-tB0.js">
+      <link rel="stylesheet" crossorigin href="/__APP_NAME__/assets/index-BpbumF96.css">
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -46,8 +43,5 @@
             <div class="spinner"></div>
         </div>
 
-      <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
-      <script nomodule crossorigin id="vite-legacy-polyfill" src="/seed-project/assets/polyfills-legacy-DbQReWO_.js"></script>
-      <script nomodule crossorigin id="vite-legacy-entry" data-src="/seed-project/assets/index-legacy-CQwnLFjN.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
     </body>
 </html>
