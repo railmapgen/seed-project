@@ -1,5 +1,5 @@
 {
-    "component": "seed-project",
+    "component": "__APP_NAME__",
     "version": "9.9.9",
     "environment": "DEV",
     "instance": "localhost"

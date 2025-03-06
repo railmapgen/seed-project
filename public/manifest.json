@@ -1,6 +1,6 @@
 {
-    "short_name": "Seed Project",
-    "name": "Seed Project",
+    "short_name": "__APP_DISPLAY_NAME__",
+    "name": "__APP_DISPLAY_NAME__",
     "icons": [
         {
             "src": "favicon.ico",

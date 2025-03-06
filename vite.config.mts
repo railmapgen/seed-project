@@ -6,7 +6,7 @@ import legacy from '@vitejs/plugin-legacy';
 
 // https://vitejs.dev/config
 export default defineConfig({
-    base: '/seed-project/',
+    base: '/__APP_NAME__/',
     plugins: [
         react(),
         legacy({

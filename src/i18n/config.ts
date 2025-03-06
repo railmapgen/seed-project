@@ -8,7 +8,7 @@ import koTranslation from './translations/ko.json';
 
 const i18n = new rmgRuntime.I18nBuilder()
     .use(initReactI18next)
-    .withAppName('Seed Project')
+    .withAppName('__APP_DISPLAY_NAME__')
     .withLng(rmgRuntime.getLanguage())
     .withResource('en', enTranslation)
     .withResource('zh-Hans', zhHansTranslation)
